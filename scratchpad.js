@@ -1,12 +1,61 @@
-/*
- * This is a JavaScript Scratchpad.
- *
- * Enter some JavaScript, then Right Click or choose from the Execute Menu:
- * 1. Run to evaluate the selected text (Ctrl+R),
- * 2. Inspect to bring up an Object Inspector on the result (Ctrl+I), or,
- * 3. Display to insert the result in a comment after the selection. (Ctrl+L)
- */
+function $(x) {return document.querySelector(x)}
+var factors=$('.factors');
+var factorsShow = $("#factorOut");
+var maxValue=$('.maxValue')
+var maxShow = $("#maxShow");
+var sum = $("#displaysum");
+var finalFactors=[];
+var max=0;
+
+
+factors.addEventListener('keyup', function() {
+                        getFactors();
+                        printFact();
+                        })
+                        
+
+maxValue.addEventListener('keyup', function() {
+                        getMax();
+                        printFact();
+                        })
+                        
+                        
+function getFactors() {
+    var arr = factors.value.split(",");
+    for(var i=0;i<arr.length;i++){
+        arr[i]= parseInt(arr[i]);
+    }
+    finalFactors = arr;
+    
+}
+
+function getMax(){
+    max=parseInt(maxValue.value);
+}
+
+function check(n){
+    for(var i=0;i<finalFactors.length;i++){
+        if(n%finalFactors[i] === 0){return true;}
+        else{return false;}
+    }
+}
+
+function printFact(){
+factorsShow.innerHTML=factors.value;
+maxShow.innerHTML= maxValue.value;
 var sum=0;
+    for (var y=0; y<max; y++){
+        if(check(y)){sum+=y;}
+    }
+    
+console.log(sum);
+sum.innerHTML = sum; 
+}
+
+
+
+printFact();
+/*var sum=0;
 var numb=[];
 
 for (var i=0; i<1000;i++){
@@ -15,22 +64,7 @@ for (var i=0; i<1000;i++){
     numb.push(i);
   }
  
-document.getElementById("ans").innerHTML= sum;
+document.getElementById("factorOut").innerHTML= sum;
 document.getElementById("ans2").innerHTML= numb;
 }
-/*
-Exception: TypeError: document.getelementid is not a function
-@Scratchpad/1:16:2
-*/
-/*
-Exception: TypeError: document.getelementbyid is not a function
-@Scratchpad/1:16:2
-*/
-/*
-Exception: TypeError: document.getElementById(...) is null
-@Scratchpad/1:19:1
-*/
-/*
-Exception: TypeError: document.getElementById(...) is null
-@Scratchpad/1:19:1
 */
