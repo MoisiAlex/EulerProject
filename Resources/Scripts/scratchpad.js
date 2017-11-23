@@ -4,19 +4,20 @@ var factorsShow = $("#factorOut");
 var maxValue=$('.maxValue')
 var maxShow = $("#maxShow");
 var sum = $("#displaysum");
-var finalFactors=[];
-var max=0;
 
 
+// adding event listeners for key up actions, basically update the apropiate variables and update the results on the page
 factors.addEventListener('keyup', function() {
                         getFactors();
                         printFact();
+  
                         })
                         
 
 maxValue.addEventListener('keyup', function() {
                         getMax();
                         printFact();
+    
                         })
                         
                         
@@ -33,11 +34,16 @@ function getMax(){
     max=parseInt(maxValue.value);
 }
 
+//need to initialize the values right after declaring them otherwise the sum will be blank until the user triggers an event listener
+
+var finalFactors=[]; getFactors();
+var max=0;getMax();
+
 function check(n){
     for(var i=0;i<finalFactors.length;i++){
         if(n%finalFactors[i] === 0){return true;}
-        else{return false;}
     }
+    return false;
 }
 
 function printFact(){
@@ -49,7 +55,7 @@ var sum=0;
     }
     
 console.log(sum);
-sum.innerHTML = sum; 
+document.getElementById("displaysum").innerHTML= sum;
 }
 
 
@@ -63,7 +69,9 @@ for (var i=0; i<1000;i++){
     sum+=i;
     numb.push(i);
   }
- 
+
+document.getElementById("displaysum").innerHTML= sum;
+
 document.getElementById("factorOut").innerHTML= sum;
 document.getElementById("ans2").innerHTML= numb;
 }

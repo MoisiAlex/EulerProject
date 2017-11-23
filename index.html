@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">    
 <title>Project Euler</title>
-<link rel="stylesheet" href="style.css">   
+<link rel="stylesheet" href="Resources/CSS/style.css">   
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet"> 
 </head>
 
 <body>
@@ -16,9 +17,9 @@
   
     <nav>
         <ul class="container">
-        <li><a href="https://www.theodinproject.com">The Odin Project</a></li>
-        <li><a href="https://projecteuler.net">Project Euler</a></li>
-        <li><a href=#>Pointless link</a></li>
+        <li><a href="https://www.theodinproject.com"><img src="Resources/Icons/theOdinProject.png"> The Odin Project</a></li>
+        <li><a href="https://projecteuler.net"><img src="Resources/Icons/PE.jpg"> Project Euler</a></li>
+        <li><a href="https://github.com/dracken2332"><img src="Resources/Icons/github.png">My Github</a></li>
         </ul>
     </nav>
         
@@ -28,10 +29,11 @@
         <article class="container">
             <div>
                 <h3>Multiples of 3 and 5</h3>
+                <hr>
                 <p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. </p>
                 <p>The function below will let you enter 2 factors and will find the sum of all the multiples of the two below the max value</p>
             </div>
-         
+        <div class="forms">
         <form>
         <p>Factors</p>
             <input type="text" value="3,5" placeholder="3,5" class="factors">
@@ -41,19 +43,28 @@
         <p>Max Value</p>
             <input type="text" value="1000" placeholder="1000" class="maxValue">
         </form>
-      
+      </div>
         <div>
              <h3>Results</h3> 
+             <hr>
             <p>The sum of multiples of <span id="factorOut"></span> up to <span id="maxShow"></span> is: <span id="displaysum"></span> </p>
         </div>
             
         </article>
-    
-      
+    <aside class="left"> 
+        
+        <div>
+        <h3> Problem 1:</h3>
+        </div>
+        </aside>
+    <aside class="right"> </aside>
+                
+        
     </main>
+      
 
     
-<script src="scratchpad.js"></script>    
+<script src="Resources/Scripts/scratchpad.js"></script>    
 </body>
 
 </html>
