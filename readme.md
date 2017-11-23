@@ -11,7 +11,7 @@ for (var i=0; i<1000;i++){
     sum+=i;
  }
  
-I built on it inspired by the other solutions and made it more flexible by breaking down the colletion of inputs, calulating if a number is a multiple and updating the HTML page via function. You can now enter the factors and the max number it will count until.
+Inspired by the other solutions submited I built on this script and made it more flexible by breaking down the colletion of inputs, calulating if a number is a multiple and updating the HTML page via functions. You can now enter multiple factors along with the max number it will count until.
 
 Solution: https://dracken2332.github.io/EulerProject/ 
 
