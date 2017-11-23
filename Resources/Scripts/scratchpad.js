@@ -1,29 +1,14 @@
-function $(x) {return document.querySelector(x)}
-var factors=$('.factors');
+function $(x) {return document.querySelector(x); }
+var factors = $('.factors');
 var factorsShow = $("#factorOut");
-var maxValue=$('.maxValue')
+var maxValue = $('.maxValue');
 var maxShow = $("#maxShow");
 var sum = $("#displaysum");
 
 
-// adding event listeners for key up actions, basically update the apropiate variables and update the results on the page
-factors.addEventListener('keyup', function() {
-                        getFactors();
-                        printFact();
-  
-                        })
-                        
-
-maxValue.addEventListener('keyup', function() {
-                        getMax();
-                        printFact();
-    
-                        })
-                        
-                        
 function getFactors() {
     var arr = factors.value.split(",");
-    for(var i=0;i<arr.length;i++){
+    for (let i=0;i<arr.length;i++){
         arr[i]= parseInt(arr[i]);
     }
     finalFactors = arr;
@@ -33,6 +18,21 @@ function getFactors() {
 function getMax(){
     max=parseInt(maxValue.value);
 }
+
+// adding event listeners for key up actions, basically update the apropiate variables and update the results on the page
+factors.addEventListener('keyup', function () {
+    getFactors();
+    printFact();
+  })
+                        
+
+maxValue.addEventListener('keyup', function() {
+    getMax();
+    printFact();
+  })
+                        
+                        
+
 
 //need to initialize the values right after declaring them otherwise the sum will be blank until the user triggers an event listener
 
@@ -54,25 +54,49 @@ var sum=0;
         if(check(y)){sum+=y;}
     }
     
-console.log(sum);
-document.getElementById("displaysum").innerHTML= sum;
+
+displaysum.innerHTML= sum;
 }
 
 
 
 printFact();
-/*var sum=0;
-var numb=[];
 
-for (var i=0; i<1000;i++){
-    if((i%3==0) || (i%5==0)){
-    sum+=i;
-    numb.push(i);
-  }
 
-document.getElementById("displaysum").innerHTML= sum;
+function fibonacci(){
+var displayFibSum =$("#displayFibSum");
+var maxFibValue = $('.maxFibValue');
+var max = parseInt(maxFibValue.value);
+var fib =[1,2];
+var evenFib=[2];
+var finalSum=0;
+    
+        
+$("#maxFibShow").innerHTML=maxFibValue.value;
+    
+    
 
-document.getElementById("factorOut").innerHTML= sum;
-document.getElementById("ans2").innerHTML= numb;
+        for(let i=0;i<fib.length;i++)
+            {
+                let sum = fib[i]+fib[i+1];
+            
+               if(sum<max){
+                    if(sum%2==0){
+                        evenFib.push(sum);
+                    }
+                fib.push(sum);
+                }
+                
+                else if(sum>max){break;}
+                console.log(evenFib);
+           
+            }
+        
+    for(let i=0;i<evenFib.length;i++){
+        finalSum += evenFib[i];
+      
+    }
+         console.log(finalSum);
+  displayFibSum.innerHTML =finalSum;
+    
 }
-*/

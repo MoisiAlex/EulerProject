@@ -52,7 +52,7 @@ nav ul li a:hover{
 }
 
 
-main{
+.problem{
     display: flex;
     
     flex-wrap:wrap;
@@ -129,6 +129,13 @@ article form input:hover{
 
 article div:last-child{
     
+}
+
+button{
+    width:30%;
+    align-self: center;
+    padding:10px;
+    font-size:18px;
 }
 
 @media (max-width:800px){
